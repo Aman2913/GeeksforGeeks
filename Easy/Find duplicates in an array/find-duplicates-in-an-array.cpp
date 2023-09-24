@@ -7,24 +7,29 @@ class Solution{
   public:
     vector<int> duplicates(int arr[], int n) {
         // code here
-        map<int,int>mpp;
         vector<int>v;
         int flag=0;
-        for(int i=0;i<n;i++){
-            mpp[arr[i]]++;
+        map<int,int>mp;
+        for(int i=0;i<n;i++)
+        {
+            mp[arr[i]]++;
         }
-        for(auto it:mpp){
-            if(it.second!=1){
+        for(auto it:mp)
+        {
+            if(it.second!=1)
+            {
                 flag=1;
                 v.push_back(it.first);
             }
         }
-        if(flag==0){
+        if(flag==0)
+        {
             v.push_back(-1);
             return v;
         }
-        else 
-           return v;
+        else{
+            return v;
+        }
     }
 };
 
